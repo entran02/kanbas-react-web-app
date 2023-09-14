@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <!-- <div id="root"></div> -->
+    <table border="0" width="100%">
+      <tr>
+        <td valign="top">
+          <ul>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Inbox</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Studio</a></li>
+            <li><a href="#">Commons</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </td>
+        <td valign="top">
+          <ul>
+            <li><a href="../home.html">Home</a></li>
+            <li><a href="#">Modules</a></li>
+            <li><a href="#">Piazza</a></li>
+            <li><a href="#">Zoom Meetings</a></li>
+            <li><a href="#">Assignments</a></li>
+            <li><a href="#">Quizzes</a></li>
+            <li><a href="../grades.html">Grades</a></li>
+            <li><a href="#">People</a></li>
+            <li><a href="#">Panopto Video</a></li>
+            <li><a href="#">Discussions</a></li>
+            <li><a href="#">Announcements</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Files</a></li>
+            <li><a href="#">Rubrics</a></li>
+            <li><a href="#">Outcomes</a></li>
+            <li><a href="#">Collaborations</a></li>
+            <li><a href="#">Syllabus</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </td>
+        <td valign="top">
+          <select>
+            <option selected>SpeedGrader</option>
+          </select>
+          <hr width="40%" align="left" />
+          <h2>Assignment Name</h2>
+          <input placeholder="A1 - ENV + HTML" />
+          <br />
+          <br />
+          <textarea
+            placeholder="This is the assignment description."
+          ></textarea>
+          <br />
+          <br />
+          <label for="points">Points</label>
+          <br />
+          <input
+            type="number"
+            id="points"
+            name="points"
+            placeholder="100"
+            min="0"
+            max="100"
+          />
+          <br />
+          <br />
+          <label for="assignment-group">Assignment Group</label>
+          <br />
+          <select id="assignment-group">
+            <option>ASSIGNMENTS</option>
+          </select>
+          <br />
+          <br />
+          <label for="display-grade-as">Display Grade as</label>
+          <br />
+          <select id="display-grade-as">
+            <option>Percentage</option>
+          </select>
+          <br />
+          <br />
+          <label for="submission-type">Submission Type</label>
+          <br />
+          <select id="submission-type">
+            <option>Online</option>
+          </select>
+          <br />
+          <br />
+          <label>Online Entry Options</label>
+          <br />
+          <input
+            type="checkbox"
+            value="TEXT-ENTRY"
+            name="check-entry"
+            id="chkbox-text-entry"
+          />
+          <label for="chkbox-tect-entry">Text Entry</label> <br />
+          <input
+            type="checkbox"
+            value="WEBSITE"
+            name="check-entry"
+            id="chkbox-website"
+          />
+          <label for="chkbox-website">Website URL</label> <br />
+          <input
+            type="checkbox"
+            value="MEDIA"
+            name="check-entry"
+            id="chkbox-media"
+          />
+          <label for="chkbox-media">Media Recordings</label> <br />
+          <input
+            type="checkbox"
+            value="ANNOTATION"
+            name="check-entry"
+            id="chkbox-annotation"
+          />
+          <label for="chkbox-annotation">Student Annotation</label> <br />
+          <input
+            type="checkbox"
+            value="FILE"
+            name="check-entry"
+            id="chkbox-file"
+          />
+          <label for="chkbox-file">File Uploads</label>
+          <br />
+          <br />
+          <label for="submission-attempts">Submission Attempts</label>
+          <br />
+          <select id="submission-attempts">
+            <option>Unlimited</option>
+          </select>
+          <br />
+          <br />
+          <label for="plagarism-review">Plagarism Review</label>
+          <br />
+          <select id="plagarism-review">
+            <option>None</option>
+          </select>
+          <br />
+          <br />
+          <label for="group-assignment">Group Assignment</label>
+          <br />
+          <input type="checkbox" value="GROUP" name="check-group" id="chkbox-group"/>
+          <label for="chkbox-group">This is a group assignment</label>
+          <br />
+          <br />
+          <label for="peer-reviews">Peer Reviews</label>
+          <br />
+          <input type="checkbox" value="PEER" name="check-peer" id="chkbox-peer"/>
+          <label for="chkbox-peer">Require Peer Reviews</label>
+          <br />
+          <br />
+          <label>Assign</label> <br />
+          <label for="assign-to">Assign to</label> <br />
+          <input placeholder="Everyone"/>
+          <br />
+          <br />
+          <label>Due</label>
+          <br />
+          <input type="date" value="2021-01-01"/>
+          <br />
+          <br />
+          <label>Available from</label>
+          <br />
+          <input type="date" value="2021-01-01"/>
+          <br />
+          <br />
+          <label>Until</label>
+          <br />
+          <input type="date" value="2021-01-01"/>
+          <br />
+          <br />
+          <a href="index.html"><button>Cancel</button></a>
+          <a href="index.html"><button>Save</button></a>
+        </td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </table>
+  </body>
+</html>
