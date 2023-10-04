@@ -3,89 +3,189 @@
   <head>
     <meta charset="UTF-8" />
     <title>Title</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      href="../../vendors/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../vendors/fontawesome/css/all.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- <div id="root"></div> -->
-    <table border="0" width="100%">
-      <tr>
-        <td valign="top">
-          <ul>
-            <li><a href="index.html">Account</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="../home.html">Courses</a></li>
-            <li><a href="#">Calendar</a></li>
-            <li><a href="#">Inbox</a></li>
-            <li><a href="#">History</a></li>
-            <li><a href="#">Studio</a></li>
-            <li><a href="#">Commons</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-        </td>
-        <td valign="top">
-          <ul>
-            <li><a href="#">Notifications</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Files</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">ePortfolios</a></li>
-            <li><a href="#">Shared Content</a></li>
-            <li><a href="#">The Hub</a></li>
-            <li><a href="#">Qwickly Course Tools</a></li>
-            <li><a href="#">Global Announcements</a></li>
-          </ul>
-        </td>
-        <td valign="top">
-          <h2>Evan Tran</h2>
-          <label for="text-field-name">Name:</label>
-          <input id="text-field-name" placeholder="name" value="Evan Tran" />
-          <label for="text-pronouns"> Pronouns:</label>
-          <select id="text-pronouns">
-            <option selected value="none">none</option>
-          </select>
-          <br />
-          <br />
-          <label for="text-field-title">Title:</label>
-          <input id="text-field-title" />
-          <h3>Contact</h3>
-          <p>
-            No registered services, you can add some on the
-            <a href="#">settings</a> page.
-          </p>
-          <h3>Biography</h3>
-          <form id="textarea">
-            <label>Student. Hello world!</label><br />
-            <textarea cols="50">Student. Hello world!</textarea>
-          </form>
-          <h3>Links</h3>
-          <ul>
-            <li><a href="#">YouTube🔗 Links to an external site.</a></li>
-          </ul>
-          <table>
-            <tr>
-              <th>
-                <label for="link-title">Title</label>
+    <div class="sidebar">
+      <img src="../../images/nLogo.png" alt="nLogo" height="80" width="80" />
+      <label for="sidebarToggle">
+        <a class="active" href="index.html">
+          <i class="fas fa-user icon-white active"></i><br />
+          Account
+        </a>
+      </label>
+      <label for="sidebarToggle">
+        <a href="../dashboard.html">
+          <i class="fas fa-tachometer-alt icon-red"></i><br />
+          Dashboard
+        </a>
+      </label>
+      <label for="sidebarToggle">
+        <a href="../home.html">
+          <i class="fas fa-book icon-red"></i><br />
+          Courses
+        </a>
+      </label>
+      <label for="sidebarToggle">
+        <a href="#">
+          <i class="fas fa-calendar-alt icon-red"></i><br />
+          Calendar
+        </a>
+      </label>
+      <label for="sidebarToggle">
+        <a href="#">
+          <i class="fas fa-envelope icon-red"></i><br />
+          Inbox
+        </a>
+      </label>
+      <label for="sidebarToggle">
+        <a href="#" id="accountLink">
+          <i class="far fa-clock icon-red"></i><br />
+          History
+        </a>
+      </label>
+      <label for="sidebarToggle">
+        <a href="#" id="accountLink">
+          <i class="fas fa-network-wired icon-red"></i><br />
+          Studio
+        </a>
+      </label>
+      <label for="sidebarToggle">
+        <a href="#" id="accountLink">
+          <i class="fas fa-sign-out-alt icon-red"></i><br />
+          Commons
+        </a>
+      </label>
+      <label for="sidebarToggle">
+        <a href="#" id="accountLink">
+          <i class="fas fa-question-circle icon-red"></i><br />
+          Help
+        </a>
+      </label>
+    </div>
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 profile-title-container">
+            <i class="fas fa-bars"></i>
+            <h4>Evan Tran's Profile</h4>
+          </div>
+          <hr />
+        </div>
+        <div class="row">
+          <div class="col" style="width: 200px">
+            <nav>
+              <ul>
+                <li><a href="#">Notifications</a></li>
+                <li class="selected"><a href="#">Profile</a></li>
+                <li><a href="#">Files</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">ePortfolios</a></li>
+                <li><a href="#">Shared Content</a></li>
+                <li><a href="#">The Hub</a></li>
+                <li><a href="#">Qwickly Course Tools</a></li>
+                <li><a href="#">Global Announcements</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-6" style="margin-left: -100px">
+            <i
+              class="fa fa-user"
+              aria-hidden="true"
+              style="font-size: 100px"
+            ></i>
+            <br />
+            <label class="form-label" style="margin-bottom: 0px"> Name:*</label>
+            <input
+              type="name"
+              class="form-control"
+              id="nameInput"
+              value="Evan Tran"
+            />
+            <label class="form-label" style="margin-bottom: 0px">
+              Pronouns:</label
+            >
+            <select class="form-select">
+              <option selected>None</option>
+            </select>
+            <label class="form-label" style="margin-bottom: 0px"> Title:</label>
+            <input class="form-control" id="titleInput" />
+            <h3>Contact</h3>
+            <p>
+              No registered services, you can add some on the
+              <a class="link-red" href="#">settings</a> page.
+            </p>
+            <h3>Biography</h3>
+            <textarea class="form-control" id="biotext" rows="3">
+Student. Hello world!</textarea
+            >
+            <h3>Links</h3>
+            <div class="row">
+              <div class="col-md-3">
+                <label for="link-title" style="padding-left: 40px">Title</label>
                 <br />
-                <input id="link-title" value="YouTube" />
-              </th>
-              <th>➡</th>
-              <th>
-                <label for="link-URL">URL</label>
+                <input id="link-title" class="form-control" value="YouTube" />
+              </div>
+              <div class="col-md-1 text-center">
+                <i class="fas fa-long-arrow-alt-right mt-3"></i>
+              </div>
+              <div class="col-md-4">
+                <label for="link-URL" style="padding-left: 68px">URL</label>
                 <br />
-                <input id="link-URL" value="https://www.youtube.com" />
-              </th>
-              <th><a href="#">Remove</a></th>
-            </tr>
-          </table>
-          <button>Add another link</button>
-          <br />
-          <button>Cancel</button>
-          <a href="index.html"><button>Save Profile</button></a>
-          <br />
-          <button>Edit Profile</button>
-          <a href="index.html"><button>Cancel Editing</button>  </a>
-        </td>
-      </tr>
-      <!-- Add more rows as needed -->
-    </table>
+                <input
+                  id="link-URL"
+                  class="form-control"
+                  value="https://www.youtube.com"
+                />
+              </div>
+              <div class="col-md-1 text-center">
+                <i
+                  class="fas fa-times mt-3"
+                  style="color: red; padding-top: 17px; margin-left: -50px"
+                ></i>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              style="padding: 2px 10px"
+            >
+              Add another link
+            </button>
+            <br />
+            <hr />
+            <div class="d-flex align-items-center justify-content-center">
+              <a href="index.html"
+                ><button type="button" class="btn btn-secondary">
+                  Cancel
+                </button></a
+              >
+              <a href="index.html"
+                ><button type="button" class="btn btn-danger">
+                  Save Profile
+                </button></a
+              >
+            </div>
+          </div>
+          <div class="float-end col">
+            <a href="index.html"
+              ><button
+                type="button"
+                class="btn btn-secondary rounded-0"
+                style="padding: 2px 10px"
+              >
+                <i class="fas fa-pencil-alt" aria-hidden="true"></i> Cancel
+                Editing
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
