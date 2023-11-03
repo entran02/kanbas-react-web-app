@@ -21,7 +21,7 @@ function Courses() {
               <ol className="breadcrumb">
                 <i className="fas fa-bars fa-lg" style={{ color: "red", paddingRight: "15px" }}></i>
                 <li className="breadcrumb-item">
-                  <a href={`/Home#/Kanbas/Courses/${course._id}/Home`}>Course {course.name}</a>
+                  <a href={`/#/Kanbas/Courses/${course._id}/Home`}>Course {course.name}</a>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
                     {currentItem}
