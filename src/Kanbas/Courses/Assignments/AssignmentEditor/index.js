@@ -5,7 +5,9 @@ import {
   addAssignment,
   updateAssignment,
   setAssignment,
+  setAssignments,
 } from "../assignmentsReducer";
+import * as client from "../client.js";
 
 function AssignmentEditor() {
   const { assignmentId } = useParams();
@@ -18,19 +20,17 @@ function AssignmentEditor() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleSave = () => {
-    dispatch(
-      addAssignment({
-        ...assignment,
-        course: courseId,
-        description: "Missing Description",
-      })
-    );
+  const handleSave = async () => {
+    client.createAssignments(courseId, assignment).then((assignment) => {
+      dispatch(addAssignment({ ...assignment, course: courseId }));
+    });
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
 
-  const handleUpdate = () => {
-    dispatch(updateAssignment(assignment));
+  const handleUpdate = async () => {
+    client.updateAssignment(assignment).then(() => {
+      dispatch(updateAssignment(assignment));
+    });
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
 

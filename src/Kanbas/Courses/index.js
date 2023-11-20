@@ -1,29 +1,53 @@
-import { Navigate, Route, Routes, useParams, useLocation } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  Routes,
+  useParams,
+  useLocation,
+} from "react-router-dom";
 import CourseNavigation from "./CourseNavigation";
 import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Courses({ courses }) {
   const { courseId } = useParams();
-  const course = courses.find((course) => course._id === courseId);
+  const URL = "http://localhost:4000/api/courses";
+  const [course, setCourse] = useState({});
+  const findCourseById = async (courseId) => {
+    const response = await axios.get(`${URL}/${courseId}`);
+    setCourse(response.data);
+  };
+  useEffect(() => {
+    findCourseById(courseId);
+  }, [courseId]);
   const location = useLocation();
-  const currentItem = location.pathname.split('/').pop().replace(/%20/g, ' ');
+  const currentItem = location.pathname.split("/").pop().replace(/%20/g, " ");
   return (
     <div className="container">
       <div className="row" style={{ paddingTop: "15px" }}>
         <div className="col-9 d-none d-md-block">
           <h2 style={{ fontSize: "16px" }}>
-            <nav style={{ "--bs-breadcrumb-divider": "'>'" }} aria-label="breadcrumb">
+            <nav
+              style={{ "--bs-breadcrumb-divider": "'>'" }}
+              aria-label="breadcrumb"
+            >
               <ol className="breadcrumb">
-                <i className="fas fa-bars fa-lg" style={{ color: "red", paddingRight: "15px" }}></i>
+                <i
+                  className="fas fa-bars fa-lg"
+                  style={{ color: "red", paddingRight: "15px" }}
+                ></i>
                 <li className="breadcrumb-item">
-                  <a href={`/#/Kanbas/Courses/${course._id}/Home`}>Course {course.name}</a>
+                  <a href={`/#/Kanbas/Courses/${course._id}/Home`}>
+                    Course {course.name}
+                  </a>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
-                    {currentItem}
+                  {currentItem}
                 </li>
               </ol>
             </nav>
@@ -31,7 +55,10 @@ function Courses({ courses }) {
         </div>
         <div className="col-3 d-none d-md-block">
           <button className="btn btn-secondary float-end">
-            <i className="fas fa-glasses" style={{ color: "black" }}> Student View</i>
+            <i className="fas fa-glasses" style={{ color: "black" }}>
+              {" "}
+              Student View
+            </i>
           </button>
         </div>
       </div>
@@ -48,12 +75,13 @@ function Courses({ courses }) {
         >
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
-            <Route path="Home" element={<Home/>} />
-            <Route path="Modules" element={<Modules/>} />
-            <Route path="Assignments" element={<Assignments/>} />
+            <Route path="Home" element={<Home />} />
+            <Route path="Modules" element={<Modules />} />
+            <Route path="Assignments" element={<Assignments />} />
             <Route
               path="Assignments/:assignmentId"
-              element={<AssignmentEditor/>}/>
+              element={<AssignmentEditor />}
+            />
             <Route path="Grades" element={<Grades />} />
           </Routes>
         </div>

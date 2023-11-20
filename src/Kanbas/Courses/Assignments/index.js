@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./styles.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setAssignment, deleteAssignment } from "./assignmentsReducer";
+import {
+  setAssignment,
+  deleteAssignment,
+  setAssignments,
+} from "./assignmentsReducer";
+import * as client from "./client.js";
 
 function Assignments() {
   const { courseId } = useParams();
@@ -20,13 +25,21 @@ function Assignments() {
   const handleDelete = (e, assignmentId, title) => {
     e.preventDefault();
     if (window.confirm(`Are you sure you to remove ${title}?`)) {
-      dispatch(deleteAssignment(assignmentId));
+      client.deleteAssignments(assignmentId).then((status) => {
+        dispatch(deleteAssignment(assignmentId));
+      });
     } else {
       return;
     }
   };
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    client
+      .findAllAssignmentsForCourse(courseId)
+      .then((assignments) => dispatch(setAssignments(assignments)));
+  }, [courseId]);
 
   return (
     <div style={{ paddingTop: "15px" }}>

@@ -36,7 +36,7 @@ function CourseNavigation() {
 
   return (
     <div>
-      <div
+      {/* <div
         style={{ marginBottom: "20px", maxWidth: "150px", overflow: "hidden", marginLeft: "15px"}}
       >
         <small
@@ -50,7 +50,7 @@ function CourseNavigation() {
         >
           {course.startDate} to {course.endDate}
         </small>
-      </div>
+      </div> */}
       <nav>
         <ul className="list-group" style={{ width: 186 }}>
           {navItems.map((name, index) => {
