@@ -101,14 +101,20 @@ function UserTable() {
               </select>
             </td>
             <td className="text-nowrap">
-              <BsFillCheckCircleFill
+              <button
                 onClick={updateUser}
-                className="me-2 text-success fs-1 text"
-              />
-              <BsPlusCircleFill
+                className="icon-button"
+                aria-label="Update User"
+              >
+                <BsFillCheckCircleFill className="me-2 text-success fs-1" />
+              </button>
+              <button
                 onClick={createUser}
-                className="text-success fs-1 text"
-              />
+                className="icon-button"
+                aria-label="Create User"
+              >
+                <BsPlusCircleFill className="text-success fs-1" />
+              </button>
             </td>
           </tr>
         </thead>
